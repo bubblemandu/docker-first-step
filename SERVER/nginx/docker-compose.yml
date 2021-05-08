@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+    madu-nginx-service:
+      image: nginx
+      restart: always
+      container_name: mandu-nginx
+      ports:
+          - "8080:80"
