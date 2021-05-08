@@ -1,18 +1,17 @@
-
 version: "3.7"
 services:
     db:
         image: mysql
         platform: linux/x86_64
         restart: always
-        command: --lower_case_table_names=1
         container_name: mandu-mysql
         ports:
-         - "3307:3306"
+          - "3306:3306"
         environment:
-         - MYSQL_DATABASE=mandu-db
-         - MYSQL_ROOT_PASSWORD=root
-         - TZ=Asia/Seoul
+          - MYSQL_DATABASE=mandu-db
+          - MYSQL_ROOT_PASSWORD=root
+          - TZ=Asia/Seoul
         command:
-         - --character-set-server=utf8mb4
-         - --collation-server=utf8mb4_unicode_ci
+          - --character-set-server=utf8mb4
+          - --collation-server=utf8mb4_unicode_ci
+          - --lower_case_table_names=1
